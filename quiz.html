@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz - L’imparfait</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+<div class="container">
+    <h2>Bonne chance, {{ username }} ! 🍀</h2>
+    <form action="{{ url_for('result') }}" method="POST">
+        <input type="hidden" name="username" value="{{ username }}">
+        {% for q in questions %}
+        <div class="question">
+            <p>{{ loop.index }}. {{ q.question }}</p>
+            <audio controls>
+                <source src="{{ url_for('static', filename='sounds/' + q.audio) }}" type="audio/mpeg">
+            </audio>
+            <input type="text" name="{{ q.id }}" placeholder="Réponse..." autocomplete="off">
+            <!-- Hidden field to remember which questions were shown -->
+            <input type="hidden" name="q_ids" value="{{ q.id }}">
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn">Soumettre mes réponses</button>
+    </form>
+</div>
+</body>
+</html>
