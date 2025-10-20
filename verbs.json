@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Je (être) petit quand j'avais 8 ans.",
+      "answer": "étais",
+      "audio": "q1.mp3"
+    },
+    {
+      "id": "q2",
+      "question": "Nous (avoir) un chien qui s'appelait Rex.",
+      "answer": "avions",
+      "audio": "q2.mp3"
+    },
+    {
+      "id": "q3",
+      "question": "Ils (jouer) au foot tous les dimanches.",
+      "answer": "jouaient",
+      "audio": "q3.mp3"
+    },
+    {
+      "id": "q4",
+      "question": "Tu (aller) à l'école en vélo.",
+      "answer": "allais",
+      "audio": "q4.mp3"
+    },
+    {
+      "id": "q5",
+      "question": "Elle (faire) souvent des gâteaux.",
+      "answer": "faisait",
+      "audio": "q5.mp3"
+    },
+    {
+      "id": "q6",
+      "question": "Vous (parler) avec vos amis tous les soirs.",
+      "answer": "parliez",
+      "audio": "q6.mp3"
+    }
+  ]
+}
