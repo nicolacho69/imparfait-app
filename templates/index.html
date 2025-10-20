@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pratique de l’Imparfait</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>✨ Pratique interactive de l’Imparfait ✨</h1>
+    <p>Complétez les phrases, écoutez et apprenez avec plaisir ! 🎧</p>
+
+    <form action="{{ url_for('quiz') }}" method="POST">
+        <input type="text" name="username" placeholder="Entrez votre prénom" required>
+        <button type="submit" class="btn">Commencer</button>
+    </form>
+
+    <h2>🏆 Top 5 des meilleurs résultats</h2>
+    <ul>
+        {% for user, score, total, date in top_scores %}
+        <li>{{ user }} — {{ score }}/{{ total }} ({{ date }})</li>
+        {% else %}
+        <li>Pas encore de résultats — invitez vos élèves à jouer 🎲</li>
+        {% endfor %}
+    </ul>
+    <p style="font-size:0.9rem; margin-top:1rem;">Pro tip: para mejorar la accesibilidad, puedes añadir más audios en /static/sounds/</p>
+</div>
+</body>
+</html>

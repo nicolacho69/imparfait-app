@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Bravo, {{ username }} ! 🎉</h2>
+    <p>Votre score : <strong>{{ score }}/{{ total }}</strong></p>
+
+    {% if score == total %}
+        <p>🌟 Excellent travail ! Vous maîtrisez l’imparfait !</p>
+    {% elif score >= (total*0.6) %}
+        <p>👏 Très bien ! Un peu de pratique et vous serez parfait(e).</p>
+    {% else %}
+        <p>💪 Continuez à pratiquer, vous allez y arriver !</p>
+    {% endif %}
+
+    <a class="btn" href="{{ url_for('index') }}">Rejouer</a>
+</div>
+</body>
+</html>
