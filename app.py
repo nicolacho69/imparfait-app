@@ -76,7 +76,11 @@ def result():
 
     return render_template("result.html", username=username, score=score, total=total)
 
+   
+    
+    import os
+
 if __name__ == "__main__":
-    # For Render compatibility: listen on 0.0.0.0 and use PORT env if provided
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=True)
+    app.run(host="0.0.0.0", port=port)
+
